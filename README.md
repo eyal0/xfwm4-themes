@@ -88,7 +88,9 @@ Then come the colors, one per line.  In the file above, the first line says that
 
 There are five rows of those, like described on that first line.
 
-Next there are 5 rows with 5 columns each.  Because on the first line, it said 5 by 5.  Even though it's only 5x5, the window manager will stretch it out to cover the entire bottom edge of the window border.  I'm going to add 10 more rows of that inactive_color_2.  I'll also need to adjust the height of the image.  Here's what the file looks like now:
+Next there are 5 rows with 5 columns each.  Because on the first line, it said 5 by 5.  Even though it's only 5x5, the window manager will stretch it out to cover the entire bottom edge of the window border.  Because all the columns are the same, it could have been made thinner to just a single column.  If you wanted a pattern like a zigzag, you could make the columns dissimilar.
+
+I'm going to add 10 more rows of that inactive_color_2.  I'll also need to adjust the height of the image.  Here's what the file looks like now:
 
 ```
 /* XPM */
@@ -116,9 +118,9 @@ static char * bottom_inactive_xpm[] = {
 "#####"};
 ```
 
-Notice the new rows of plus signs.  Also notice that I adjust the first line to say 15 rows instead of 5.  Now save the file, switch away from the theme and then switch back to it.  Only the inactive windows should be affected because we only changed `bottom-inactive.xpm`.  Also notice that we didn't get 10 new rows of pixels!  That's because the inactive and active have different heights and that will confuse xfwm4.  So go ahead and modify `bottom-active.xpm`, too.  Now the bottom border should be quite thick.  You can go around and do the same for all active and inactive bottom, left, right and corners.
+Notice the new rows of plus signs.  Also notice that I adjust the first line to say 15 rows instead of 5.  Now save the file, switch away from the theme and then switch back to it.  Only the inactive windows should be affected because we only changed `bottom-inactive.xpm`.  Also notice that we didn't get 10 new rows of pixels!  That's because the inactive and active have different heights and that will confuse xfwm4.  So go ahead and modify `bottom-active.xpm`, too.  Now the bottom border should be quite thick.  You can go around and do the same for all "active" and "inactive" bottom", left, right and corners.
 
-Notice that there is no top.  That's because it's called title and it's more complex because it has a few parts to it, like the part where the buttons are, the part where the title of the window is, etc.  Your best bet is to just adjust the xpm file, see what changes, and then try again.
+Notice that there is no "top".  That's because it's called "title" and it's more complex because it has a few parts to it, like the part where the buttons are, the part where the title of the window is, etc.  Your best bet is to just adjust the xpm files, see what changes, and then try again.
 
 Buttons are in those files, too, like close, hide, shade, maximize, minimze, etc.  You can adjust them, too.
 
